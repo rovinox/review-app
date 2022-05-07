@@ -23,10 +23,10 @@ export default function Home(props) {
   const [reviews, setReviews] = useState(null);
   const [isCommenting, setIsCommenting] = useState(false);
   const [comment, setComment] = useState(null);
+
   useEffect(() => {
     setReviews(data);
   }, []);
-
   const submitComment = (id) => {
     setIsCommenting(false);
 
@@ -43,6 +43,9 @@ export default function Home(props) {
   };
   const handleComment = () => {
     setIsCommenting(true);
+  };
+  const handleInput = (e) => {
+    setComment(e.target.value);
   };
 
   return (
@@ -62,12 +65,14 @@ export default function Home(props) {
           reviews={reviews}
           id={id}
           handleComment={handleComment}
-          setComment={setComment}
+          handleInput={handleInput}
           submitComment={submitComment}
           comment={comment}
         />
       ) : (
-        <DisplayAllReviews handleComment={handleComment} reviews={reviews} />
+        <>
+          <DisplayAllReviews handleComment={handleComment} reviews={reviews} />
+        </>
       )}
     </>
   );

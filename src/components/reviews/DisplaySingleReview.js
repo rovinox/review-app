@@ -63,7 +63,7 @@ export default function DisplaySingleReview({
   id,
   submitComment,
   isCommenting,
-  setComment,
+  handleInput,
   handleComment,
   comment,
 }) {
@@ -111,7 +111,7 @@ export default function DisplaySingleReview({
                 placeholder={
                   review.comment ? "Edit You're Comment" : "Write A Comment"
                 }
-                onChange={(e) => setComment(e.target.value)}
+                onChange={handleInput}
               />
 
               <Button
@@ -121,6 +121,7 @@ export default function DisplaySingleReview({
                 }}
                 variant="contained"
                 color="primary"
+                type="submit"
               >
                 submit
               </Button>

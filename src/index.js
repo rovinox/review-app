@@ -6,7 +6,6 @@ import reportWebVitals from "./reportWebVitals";
 import { MuiThemeProvider, createTheme } from "@material-ui/core/styles";
 import LightBlue from "@material-ui/core/colors/lightBlue";
 import { BrowserRouter } from "react-router-dom";
-
 const theme = createTheme({
   palette: {
     primary: LightBlue,
